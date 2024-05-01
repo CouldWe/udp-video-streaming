@@ -3,7 +3,8 @@ import socket
 import pickle
 import numpy as np
 
-host = "0.0.0.0"
+# host = "0.0.0.0"
+host = "127.0.0.1"
 port = 5000
 max_length = 65540
 
@@ -34,7 +35,8 @@ while True:
                     buffer += data
 
             frame = np.frombuffer(buffer, dtype=np.uint8)
-            frame = frame.reshape(frame.shape[0], 1)
+            # print(frame.shape)
+            # frame = frame.reshape(frame.shape[0], 1)
 
             frame = cv2.imdecode(frame, cv2.IMREAD_COLOR)
             frame = cv2.flip(frame, 1)

@@ -16,7 +16,7 @@ ret, frame = cap.read()
 while ret:
     # compress frame
     retval, buffer = cv2.imencode(".jpg", frame)
-
+    print(buffer)
     if retval:
         # convert to byte array
         buffer = buffer.tobytes()
@@ -37,8 +37,8 @@ while ret:
         right = max_length
 
         for i in range(num_of_packs):
-            print("left:", left)
-            print("right:", right)
+            # print("left:", left)
+            # print("right:", right)
 
             # truncate data to send
             data = buffer[left:right]
